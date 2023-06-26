@@ -2,12 +2,6 @@
 
 The Music Library Management System is a Spring Boot restful API designed to manage a music library. It allows users to organize music tracks and playlists, search music tracks by title, artist, album, genre, keyword, search playlists by name, track title, artist name of track, album name of track, or track genre, and search tracks in a given playlist by conditions as above. Each user must register and login to add tracks to a playlist, so each playlist belongs to a user, and only the owner of the playlist can update or delete it. The system also manages albums and artists. Only admins can create, update, and delete tracks, albums, and artists, but all authenticated users can manage playlists. This README provides an overview of the project and instructions for setting up and running the Spring Boot application.
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
 ## Technologies Used
 
 - Spring Boot: Java-based framework for creating restfull api.
