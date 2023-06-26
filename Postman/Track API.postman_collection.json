@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "88c4c316-2e35-4bc9-b230-f98e36ce4d32",
+		"name": "Track API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save a track",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"trackTitle\": \"Track 3\",\n  \"duration\": \"PT3M30S\",\n  \"artist\": {\n    \"artistId\": 2\n  },\n  \"album\": {\n    \"albumId\": 2\n  },\n  \"lyrics\": \"Lyrics 2\",\n  \"genre\": \"Genre 2\",\n  \"releaseDate\": \"2023-06-23\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tracks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tracks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tracks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find a track by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tracks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find tracks by track title",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tracks/find-by-title?track-title=Track 1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks",
+						"find-by-title"
+					],
+					"query": [
+						{
+							"key": "track-title",
+							"value": "Track 1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find tracks by artist name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tracks/find-by-artist?artist-name=Artist 9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks",
+						"find-by-artist"
+					],
+					"query": [
+						{
+							"key": "artist-name",
+							"value": "Artist 9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find tracks by album name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tracks/find-by-album?album-name=The Greatest Track",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks",
+						"find-by-album"
+					],
+					"query": [
+						{
+							"key": "album-name",
+							"value": "The Greatest Track"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find tracks by keyword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tracks/find?keyword=The Greatest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks",
+						"find"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "The Greatest"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a track",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"trackId\": 1,\n  \"trackTitle\": \"Updated Track\",\n  \"duration\": \"PT4M\",\n  \"artist\": {\n    \"artistId\": 2\n  },\n  \"album\": {\n    \"albumId\": 2\n  },\n  \"lyrics\": \"Updated Lyrics\",\n  \"genre\": \"Updated Genre\",\n  \"releaseDate\": \"2023-06-23\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tracks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a track",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/tracks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tracks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

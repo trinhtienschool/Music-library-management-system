@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "27e0b713-6ee8-485b-ac3f-1e15bcc56471",
+		"name": "Playlist API",
+		"description": "API endpoints for managing playlists and tracks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playlistName\": \"My Playlist 5\",\n    \"createdDate\": \"2023-06-23\",\n    \"userId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/playlists/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Track to Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tracks\":\n    [\n        {\n        \"trackId\":2\n    },\n    {\n        \"trackId\":3\n    }\n    ]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/playlists/1/tracks/add",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"1",
+						"tracks",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove tracks from playlist",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tracks\":\n    [\n        {\n        \"trackId\":2\n    }\n   \n    ]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/playlists/2/tracks/remove",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"2",
+						"tracks",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Playlists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Playlist by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Playlists by Name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists/search-by-playlist-name?name=My Playlist 5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"search-by-playlist-name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "My Playlist 5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Playlists by Multiple Criteria",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists/search?genre=Genre 2&albumName=The Greatest Track&artistName=Artist 9&trackTitle=Track 2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"search"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Genre 2"
+						},
+						{
+							"key": "albumName",
+							"value": "The Greatest Track"
+						},
+						{
+							"key": "artistName",
+							"value": "Artist 9"
+						},
+						{
+							"key": "trackTitle",
+							"value": "Track 2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Playlists by Keyword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists/search-by-keyword?keyword=Genre 2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"search-by-keyword"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Genre 2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tracks by Playlist ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists/1/tracks",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"1",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Track by PlaylistId And Multiple Criteria",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists/1/tracks/search?genre=Ballad&albumName=The Greatest Track&artistName=Artist 9&trackTitle=Track 2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"1",
+						"tracks",
+						"search"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Ballad"
+						},
+						{
+							"key": "albumName",
+							"value": "The Greatest Track"
+						},
+						{
+							"key": "artistName",
+							"value": "Artist 9"
+						},
+						{
+							"key": "trackTitle",
+							"value": "Track 2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tracks by Playlist ID and Keyword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists/1/tracks/search-keyword?keyword=Pop",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"1",
+						"tracks",
+						"search-keyword"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Pop"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"playlistId\": 2,\n  \"playlistName\": \"Updated Playlist\",\n  \"createdDate\": \"2023-06-23\",\n  \"tracks\": [\n    {\n      \"trackId\": 2,\n      \"trackTitle\": \"Updated Track 1\",\n      \"duration\": \"PT4M\",\n      \"artist\": {\n        \"name\": \"Updated Artist 1\"\n      },\n      \"album\": {\n        \"name\": \"Updated Album 1\"\n      },\n      \"lyrics\": \"Updated Lyrics 1\",\n      \"genre\": \"Updated Genre 1\",\n      \"releaseDate\": \"2022-01-01\"\n    }\n  ],\n  \"userId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/playlists/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjEsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3NTE2OTksImV4cCI6MTY4Nzc4NzY5OX0.x7E4eXQBqq6OhpSF1bkyfiD9pQVtIJDMmDvT7YkvA7I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/playlists/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"playlists",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

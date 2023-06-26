@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "4bb736df-d7f8-42d8-a62f-b39c52743f0f",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"username\": \"tientrinh2212\",\n  \"email\": \"trinhtien2212@gmail.com\",\n  \"password\": \"453sfdjalD%\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"country\": \"United States\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"username\": \"tientrinh2212\",\n  \"password\": \"453sfdjalD%\"\n \n  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJST0xFUyI6IlJPTEVfQURNSU4iLCJVc2VySWQiOjIsInN1YiI6InRpZW50cmluaDIyMTIiLCJpYXQiOjE2ODc3MzA5MjQsImV4cCI6MTY4Nzc2NjkyNH0.r832hvyJaVbjaP0r2bxj6cHmCqElUqGHV3VuwDllsWM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"username\": \"tientrinh2212\",\n  \"email\": \"trinhtien6236@gmail.com\",\n  \"password\": \"453sfdjalD%\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"country\": \"United States\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
